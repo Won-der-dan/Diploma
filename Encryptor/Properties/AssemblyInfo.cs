@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("LEAU_DIPLOMA")]
+[assembly: AssemblyTitle("Encryptor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("LEAU_DIPLOMA")]
+[assembly: AssemblyProduct("Encryptor")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("e286e46e-8708-402f-9e31-180a65b74d6c")]
+[assembly: Guid("c713076f-f66a-4392-9835-1733ce9ac842")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //

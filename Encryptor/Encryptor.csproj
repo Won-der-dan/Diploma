@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E286E46E-8708-402F-9E31-180A65B74D6C}</ProjectGuid>
+    <ProjectGuid>{C713076F-F66A-4392-9835-1733CE9AC842}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LEAU_DIPLOMA</RootNamespace>
-    <AssemblyName>LEAU_DIPLOMA</AssemblyName>
+    <RootNamespace>Encryptor</RootNamespace>
+    <AssemblyName>Encryptor</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
