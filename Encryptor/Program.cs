@@ -46,7 +46,6 @@ namespace Encryptor
         {
             Console.WriteLine("o privet che zashifrovat'");
             string input = Console.ReadLine();
-            Console.WriteLine("nu poka net, sore");
             Console.WriteLine(Encrypt(input));
             Console.WriteLine(Decrypt(Encrypt(input)));
         }
