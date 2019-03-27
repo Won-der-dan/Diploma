@@ -6,9 +6,9 @@ namespace Encryptor
     class Program
     {
         //length = 83
-        const string _alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯабвгдеёжзийклмнопрстуфхцчшщьыъэюя!@#$%^&*()-_=+., ";
-        const double _z = 3;
-        const double _x = 6;
+        const string _alphabet = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*()-_=+., ";
+        const double _z = 4563456234;
+        const double _x = 2345232;
 
         static char ToChar(double x)
         {
@@ -25,14 +25,19 @@ namespace Encryptor
             StringBuilder output = new StringBuilder("");
             for (int i = 0; i < input.Length; i++)
             {
-                double y = 0;
-                double y1 = ToNumber(input[i]) + 83 * Math.Cos((_z + (i + 1) * _x) * Math.PI / 180) + 83;
-                double y2 = ToNumber(input[i]) + 83 * Math.Cos((_z + (i + 1) * _x) * Math.PI / 180);
-                double y3 = ToNumber(input[i]) + 83 * Math.Cos((_z + (i + 1) * _x) * Math.PI / 180) - 83;
-                if (y1 >= 0 && y1 <= 83) y = y1;
-                else if (y2 >= 0 && y2 <= 83) y = y2;
-                else if (y3 >= 0 && y3 <= 83) y = y3;
+                double y = (ToNumber(input[i]) + _alphabet.Length * Math.Cos((_z + (i + 1) * _x) * Math.PI / 180) + _alphabet.Length) % _alphabet.Length;
                 output.Append(ToChar(y));
+            }
+            return output.ToString();
+        }
+
+        static string Decrypt(string input)
+        {
+            StringBuilder output = new StringBuilder("");
+            for (int i = 0; i < input.Length; i++)
+            {
+                double x = (ToNumber(input[i]) - _alphabet.Length * Math.Cos((_z + (i + 1) * _x) * Math.PI / 180) + 2 * _alphabet.Length) % _alphabet.Length;
+                output.Append(ToChar(x));
             }
             return output.ToString();
         }
@@ -43,6 +48,7 @@ namespace Encryptor
             string input = Console.ReadLine();
             Console.WriteLine("nu poka net, sore");
             Console.WriteLine(Encrypt(input));
+            Console.WriteLine(Decrypt(Encrypt(input)));
         }
     }
 }
