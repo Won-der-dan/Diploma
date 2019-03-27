@@ -44,7 +44,7 @@ namespace Encryptor
 
         static void Main(string[] args)
         {
-            Console.WriteLine("o privet che zashifrovat'");
+            Console.WriteLine("Enter the text to encrypt");
             string input = Console.ReadLine();
             Console.WriteLine(Encrypt(input));
             Console.WriteLine(Decrypt(Encrypt(input)));
