@@ -6,7 +6,7 @@ namespace Encryptor
     class Program
     {
         //length = 83
-        const string _alphabet = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*()-_=+., ";
+        const string _alphabet = "qwertyuiopasdfghjklzxcvbnm ";
         const double _z = 4563456234;
         const double _x = 2345232;
 
