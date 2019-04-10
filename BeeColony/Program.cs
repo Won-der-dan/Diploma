@@ -11,28 +11,32 @@ namespace BeeColony
     {
         private const int S = 10000; //число разведчиков
 
+        private static DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<Bigram>));
+        private static List<Bigram> bigrams = new List<Bigram>();
 
         static void Main(string[] args)
         {
-            List<Bigram> bigrams = new List<Bigram>();
-            var lines = File.ReadAllLines("bigrams.json");
-            foreach (var line in lines)
+            using (FileStream fs = new FileStream("bigrams.json", FileMode.OpenOrCreate))
             {
-                Bigram bigram = new Bigram();
-                bigram.Letters = line.Substring(5, 2);
-                char[] charsToTrim = { ' ', ']', ',' };
-                bigram.Frequency = Convert.ToInt64(line.Substring(10).TrimEnd(charsToTrim));
-                bigrams.Add(bigram);
+                bigrams = (List<Bigram>)jsonFormatter.ReadObject(fs);
             }
-            foreach (Bigram bigram in bigrams)
-            {
-                Console.WriteLine("Bigram {0} --- frequency {1}", bigram.Letters, bigram.Frequency);
-            }
+            //foreach (Bigram bigram in bigrams)
+            //{
+            //    Console.WriteLine("Bigram {0} --- frequency {1}", bigram.Letters, bigram.Frequency);
+            //}
+            string input = Console.ReadLine();
+            Console.WriteLine(FitnessFunction(input));
         }
 
-        private int fitnessFunction()
+        private static double FitnessFunction(string input)
         {
-            return 1;
+            double output = 0;
+            input = input.Replace(" ", "");
+            for (int i = 0; i < input.Length - 1; i++)
+            {
+                output += bigrams.Find(b => b.Letters == input.Substring(i, 2)).Frequency;
+            }
+            return output / (input.Length - 1);
         }
     }
 
