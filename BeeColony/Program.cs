@@ -35,8 +35,8 @@ namespace BeeColony
                 {
                     solutions[i, 0] = rand.NextDouble() * Math.PI;
                     solutions[i, 1] = rand.NextDouble() * Math.PI;
-                    //var decrypt = Decrypt(code, solutions[i, 0], solutions[i, 1]);
-                    var decrypt = Decrypt(code, 1, 1);
+                    var decrypt = Decrypt(code, solutions[i, 0], solutions[i, 1]);
+                    //var decrypt = Decrypt(code, 1, 1);
                     var fitness = FitnessFunction(decrypt);
                     if (fitness > bestFrequency)
                     {
@@ -46,7 +46,6 @@ namespace BeeColony
                         Console.WriteLine(fitness);
                     }
                 }
-                break;
             }
         }
 
@@ -66,7 +65,7 @@ namespace BeeColony
             StringBuilder output = new StringBuilder("");
             for (int i = 0; i < input.Length; i++)
             {
-                double x = (ToNumber(input[i]) - _alphabet.Length * Math.Cos((_z + (i + 1) * _x) * Math.PI / 180) + 2 * _alphabet.Length) % _alphabet.Length;
+                double x = (ToNumber(input[i]) - _alphabet.Length * Math.Cos(_z + (i + 1) * _x) + 2 * _alphabet.Length) % _alphabet.Length;
                 output.Append(ToChar(x));
             }
             return output.ToString();

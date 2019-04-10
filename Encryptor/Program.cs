@@ -7,8 +7,8 @@ namespace Encryptor
     {
         //length = 83
         const string _alphabet = "qwertyuiopasdfghjklzxcvbnm ";
-        const double _z = 4563456234;
-        const double _x = 2345232;
+        const double _z = 0.3333333;
+        const double _x = 5;
 
         static char ToChar(double x)
         {
@@ -25,7 +25,7 @@ namespace Encryptor
             StringBuilder output = new StringBuilder("");
             for (int i = 0; i < input.Length; i++)
             {
-                double y = (ToNumber(input[i]) + _alphabet.Length * Math.Cos((_z + (i + 1) * _x) * Math.PI / 180) + _alphabet.Length) % _alphabet.Length;
+                double y = (ToNumber(input[i]) + _alphabet.Length * Math.Cos(_z + (i + 1) * _x) + _alphabet.Length) % _alphabet.Length;
                 output.Append(ToChar(y));
             }
             return output.ToString();
@@ -36,7 +36,7 @@ namespace Encryptor
             StringBuilder output = new StringBuilder("");
             for (int i = 0; i < input.Length; i++)
             {
-                double x = (ToNumber(input[i]) - _alphabet.Length * Math.Cos((_z + (i + 1) * _x) * Math.PI / 180) + 2 * _alphabet.Length) % _alphabet.Length;
+                double x = (ToNumber(input[i]) - _alphabet.Length * Math.Cos(_z + (i + 1) * _x) + 2 * _alphabet.Length) % _alphabet.Length;
                 output.Append(ToChar(x));
             }
             return output.ToString();
