@@ -1,26 +1,25 @@
 ﻿using System;
 using System.Text;
 
-namespace Encryptor
+namespace Diploma
 {
-    class Program
+    public class Encryptor
     {
-        //length = 83
-        const string _alphabet = "qwertyuiopasdfghjklzxcvbnm ";
-        const double _z = 0.3333333;
-        const double _x = 5;
+        public const string _alphabet = "qwertyuiopasdfghjklzxcvbnm ";
+        //const double _z = 0.3333333;
+        //const double _x = 5;
 
-        static char ToChar(double x)
+        public static char ToChar(double x)
         {
             return _alphabet[Convert.ToInt32(Math.Floor(x))];
         }
 
-        static double ToNumber(char x)
+        public static double ToNumber(char x)
         {       
             return _alphabet.IndexOf(x) + 0.5;
         }
 
-        static string Encrypt(string input)
+        public static string Encrypt(string input, double _x, double _z)
         {
             StringBuilder output = new StringBuilder("");
             for (int i = 0; i < input.Length; i++)
@@ -31,7 +30,7 @@ namespace Encryptor
             return output.ToString();
         }
 
-        static string Decrypt(string input)
+        public static string Decrypt(string input, double _x, double _z)
         {
             StringBuilder output = new StringBuilder("");
             for (int i = 0; i < input.Length; i++)
@@ -46,8 +45,8 @@ namespace Encryptor
         {
             Console.WriteLine("Enter the text to encrypt");
             string input = Console.ReadLine();
-            Console.WriteLine(Encrypt(input));
-            Console.WriteLine(Decrypt(Encrypt(input)));
+            Console.WriteLine(Encrypt(input, 0.3333333, 0.5));
+            Console.WriteLine(Decrypt(Encrypt(input, 0.3333333, 0.5), 0.3333333, 0.5));
         }
     }
 }
