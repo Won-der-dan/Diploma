@@ -39,8 +39,8 @@ namespace Diploma
                 var solutions = new Dictionary<Tuple<double, double>, double>();
                 for (int i = 0; i < S; i++)
                 {
-                    var x = rand.NextDouble() * Math.PI;
-                    var y = rand.NextDouble() * Math.PI;
+                    var x = rand.NextDouble() * Math.PI * 2;
+                    var y = rand.NextDouble() * Math.PI * 2;
                     var decrypt = Encryptor.Decrypt(code, x, y);
                     var fitness = FitnessFunction(decrypt);
                     solutions.Add(new Tuple<double, double>(x, y), fitness);
