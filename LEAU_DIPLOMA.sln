@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryptor", "Encryptor\Encr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeeColony", "BeeColony\BeeColony.csproj", "{CAE7A893-4757-4928-98EE-FEEF561613F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntColony", "AntColony\AntColony.csproj", "{ED729EEE-1AF7-4F75-B105-354FD49F11CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CAE7A893-4757-4928-98EE-FEEF561613F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAE7A893-4757-4928-98EE-FEEF561613F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAE7A893-4757-4928-98EE-FEEF561613F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED729EEE-1AF7-4F75-B105-354FD49F11CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED729EEE-1AF7-4F75-B105-354FD49F11CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED729EEE-1AF7-4F75-B105-354FD49F11CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED729EEE-1AF7-4F75-B105-354FD49F11CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
