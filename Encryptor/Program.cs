@@ -5,7 +5,7 @@ namespace Diploma
 {
     public class Encryptor
     {
-        public const string _alphabet = "qwertyuiopasdfghjklzxcvbnm ";
+        public const string _alphabet = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM 0123456789!@#$%^&*()_+=-№;:?[{}]/,.<>\"'";
         //const double _z = 0.3333333;
         //const double _x = 5;
 
@@ -15,7 +15,7 @@ namespace Diploma
         }
 
         public static double ToNumber(char x)
-        {       
+        {
             return _alphabet.IndexOf(x) + 0.5;
         }
 
@@ -45,8 +45,8 @@ namespace Diploma
         {
             Console.WriteLine("Enter the text to encrypt");
             string input = Console.ReadLine();
-            Console.WriteLine(Encrypt(input, 0.3333333, 0.5));
-            Console.WriteLine(Decrypt(Encrypt(input, 0.3333333, 0.5), 0.3333333, 0.5));
+            Console.WriteLine(Encrypt(input, 1, 2));
+            Console.WriteLine(Decrypt(Encrypt(input, 1, 2), 0.99999, 1.99999));
         }
     }
 }
