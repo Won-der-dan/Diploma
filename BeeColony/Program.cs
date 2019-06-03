@@ -11,13 +11,13 @@ namespace Diploma
 {
     class Program
     {
-        private const int S = 1000000; //число разведчиков
-        private const int D = 1000; //количество лучших рассматриваемых решений
-        private const double lambda = 0.01; //окрестность, в которой будет проверяться перспективное решение
+        private const int S = 100000; //число разведчиков
+        private const int D = 100; //количество лучших рассматриваемых решений
+        private const double lambda = 0.001; //окрестность, в которой будет проверяться перспективное решение
         private const double PS = 1000; //количество разведчиков для каждого перспективного решения
 
         private static Dictionary<string, double> bigrams = new Dictionary<string, double>();
-        private static string code = "u7d-@x3wcRt-fN№eMUt*]d<B^1ixA$:^)qilt.*?h$ShysfUd,v^=y <?&HZ;U!gsSD=wP2O>i\" / ibr0; Oog\"4@iT?Szoa_^j.iYx iUGmU8\"n]M}(KnYCPi jn%wj3b\"dNn:Vo&Mjh vnC-Ye^kby>^UdvKF2tbWaqx1w> k}=E'0";
+        private static string code = "S3Ytw[7jh,Kjng:)M)7drBb)m1TQtrw$Sd]gUJjh&i 1tKYeE[aAu>KdEv,vvDqf1#u-(fW^,}wE9,,>=1o&AbN6e5[z=wfJu\"JkI4+;q.%E-:,k!aRUZ:sg9e№xLAxl9fu/lBOq;_k* c{{ aS4_ > cHBsB2 @]1YO < Oigzk№XHPn95.tioVAN_ / 5bv}HiQp\"-NJGt  b7!tG_'[L1zz<X1Lh@5dr1r\"DunhiDv/.ms6//y1B M0t^kfSC>U'b#q";
         //private static string code = ")C6}J*moYb2Ic5}Kpj,{L1:Fzy QQ -Wt)oeB:4Fr№S#ag9Y%>Yo_gp>-5V.:O";
 
         static void Main(string[] args)
@@ -61,6 +61,8 @@ namespace Diploma
                     furaj.Add(solution.Key, solution.Value);
                 }
                 furaj2 = new Dictionary<Tuple<double, double>, double>();
+                var sortedList = furaj.ToList();
+                sortedList.Sort((pair1, pair2) => pair1.Value.CompareTo(pair2.Value));
                 foreach (var solution in furaj)
                 {
                     var bestSolutionKey = solution.Key;
@@ -84,7 +86,7 @@ namespace Diploma
                             Console.WriteLine(fitness);
                         }
                     }
-                    if (bestSolutionValue > solution.Value) furaj2.Add(bestSolutionKey, bestSolutionValue);
+                    if (bestSolutionValue > sortedList[90].Value) furaj2.Add(bestSolutionKey, bestSolutionValue);
                 }
             }
         }
