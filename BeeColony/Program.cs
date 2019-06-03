@@ -17,7 +17,7 @@ namespace Diploma
         private const double PS = 1000; //количество разведчиков для каждого перспективного решения
 
         private static Dictionary<string, double> bigrams = new Dictionary<string, double>();
-        private static string code = "S3Ytw[7jh,Kjng:)M)7drBb)m1TQtrw$Sd]gUJjh&i 1tKYeE[aAu>KdEv,vvDqf1#u-(fW^,}wE9,,>=1o&AbN6e5[z=wfJu\"JkI4+;q.%E-:,k!aRUZ:sg9e№xLAxl9fu/lBOq;_k* c{{ aS4_ > cHBsB2 @]1YO < Oigzk№XHPn95.tioVAN_ / 5bv}HiQp\"-NJGt  b7!tG_'[L1zz<X1Lh@5dr1r\"DunhiDv/.ms6//y1B M0t^kfSC>U'b#q";
+        private static string code = "hdutn'r tx)VwuW)-sd&pZ,pb,E-bw dnEo'j+=y1$yGWgEJTTxVVi!R>Vl/_j2&rU-5fsc+NH1m9;tlbOHk9 sOmao<*[yD&e&:'q@}ct%LnSnlj{&/r7=a8Ak]#/Wg6 s7@Rg+^kc/2h4{c'R}la9L L+3I.Q:oWft&IV?v:T3$9 J+u#.l/oI;tMKBibtTu{GiC{2j{YiVG5i9PB<z,P4,Kr$%c^yYwuG5o0 }PW'7p;P L-dK}T/u:[e$L";
         //private static string code = ")C6}J*moYb2Ic5}Kpj,{L1:Fzy QQ -Wt)oeB:4Fr№S#ag9Y%>Yo_gp>-5V.:O";
 
         static void Main(string[] args)
